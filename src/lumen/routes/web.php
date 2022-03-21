@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 /** @var \Laravel\Lumen\Routing\Router $router */
 
 /*
@@ -22,3 +23,10 @@ $router->get('/', function () use ($router) {
 $router->get('/', function () use ($router) {
   return view('factura');
 });
+
+$router->get('/factura', 'PostController@create');
+$router->post('/add', 'PostController@store');
+
+
+$router->get('/facturama', 'FacturamaController@index');
+$router->get('/view', 'PostController@getFactura');
