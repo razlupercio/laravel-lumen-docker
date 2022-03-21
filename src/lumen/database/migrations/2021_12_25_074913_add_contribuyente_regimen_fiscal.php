@@ -13,11 +13,11 @@ class AddContribuyenteRegimenFiscal extends Migration
      */
     public function up()
     {
-    Schema::table('contribuyente', function (Blueprint $table) {
-        $table->unsignedBigInteger('id_regimen_fiscal');
-        $table->foreign('id_regimen_fiscal')->references('id')->on('regimen-fiscal');
+        //Schema::table('contribuyente', function (Blueprint $table) {
+        //    $table->foreignId('id_regimen_fiscal')->constrained('regimen_fiscal');
 
-    });
+
+        //});
     }
 
     /**
@@ -27,6 +27,6 @@ class AddContribuyenteRegimenFiscal extends Migration
      */
     public function down()
     {
-        //
+        //Schema::drop('contribuyente');
     }
 }

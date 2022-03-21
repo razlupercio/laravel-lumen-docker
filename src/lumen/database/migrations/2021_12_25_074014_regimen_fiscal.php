@@ -14,7 +14,7 @@ class RegimenFiscal extends Migration
     public function up()
     {
     Schema::create('regimen-fiscal', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('desc');
             $table->timestamps();
         }); 
@@ -27,6 +27,11 @@ class RegimenFiscal extends Migration
      */
     public function down()
     {
+        if (Schema::hasTable('contribuyente')) {
+            Schema::drop('contribuyente');
+        }
+
+        
         Schema::drop('regimen-fiscal');
     }
 }

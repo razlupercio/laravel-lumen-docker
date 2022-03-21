@@ -14,7 +14,7 @@ class Contribuyente extends Migration
     public function up()
     {
     Schema::create('contribuyente', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('rfc');
             $table->string('email');
             $table->string('razon_social');
@@ -29,6 +29,6 @@ class Contribuyente extends Migration
      */
     public function down()
     {
-        Schema::drop('contribuyente');
+        //Schema::drop('contribuyente');
     }
 }
