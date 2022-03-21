@@ -2,7 +2,7 @@
 
 <x-base>
 
-<form class="form-horizontal">
+<form class="form-horizontal" action="add" method="post">
 <fieldset>
 
 <!-- Form Name -->
@@ -12,10 +12,30 @@
 <div class="form-group">
   <label class="col-md-12 control-label" for="ticket">Ticket*</label>  
   <div class="col-md-12">
-  <input id="ticket" name="ticket" type="text" placeholder="Ingresa tu # de ticket" class="form-control input-md" required="">
+  <input id="ticket" name="ticket" type="number" placeholder="Ingresa tu # de ticket" class="form-control input-md" required="">
     
   </div>
 </div>
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-12 control-label" for="ticket">Monto*</label>  
+  <div class="col-md-12">
+  <input id="monto" name="monto" type="number" step="0.01" placeholder="Ingresa Monto" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-12 control-label" for="rfc">Nombre o Razón Social*</label>  
+  <div class="col-md-12">
+  <input id="razon_social" name="razon_social" type="text" placeholder="Ingresa tu Razón Social" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
 
 <!-- Text input-->
 <div class="form-group">
@@ -55,6 +75,7 @@
 </div>
 <script>
     $('#fecha').datepicker({
+        format: 'mm/dd/yyyy',
         todayBtn: "linked",
         language: "es",
         orientation: "top left"
